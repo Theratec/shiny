@@ -17,7 +17,7 @@ namespace Shiny.BluetoothLE
 
 
         public GattDescriptor(GattCharacteristic characteristic, CBDescriptor native)
-                       : base(characteristic, native.UUID.ToString())
+                       : base(characteristic, native.UUID.ToString(true))
         {
             this.characteristicObj = characteristic;
             this.native = native;

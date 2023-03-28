@@ -19,7 +19,7 @@ namespace Shiny.BluetoothLE
 
 
         public GattCharacteristic(GattService service, CBCharacteristic native)
-            : base(service, native.UUID.ToString(), (CharacteristicProperties)(int)native.Properties)
+            : base(service, native.UUID.ToString(true), (CharacteristicProperties)(int)native.Properties)
         {
             this.serivceObj = service;
             this.NativeCharacteristic = native;

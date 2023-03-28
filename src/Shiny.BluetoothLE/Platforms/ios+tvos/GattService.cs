@@ -15,7 +15,7 @@ namespace Shiny.BluetoothLE
 
 
         public GattService(Peripheral peripheral, CBService native)
-            : base(peripheral, native.UUID.ToString(), native.Primary)
+            : base(peripheral, native.UUID.ToString(true), native.Primary)
         {
             this.Peripherial = peripheral.Native;
             this.Service = native;
