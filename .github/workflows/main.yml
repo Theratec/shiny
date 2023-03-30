@@ -16,10 +16,10 @@ jobs:
           token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
           submodules: true
 
-      - name: Pull & update submodules recursively
-        run: |
-          git submodule update --init --recursive
-          git submodule update --recursive --remote
+#      - name: Pull & update submodules recursively
+#        run: |
+#          git submodule update --init --recursive
+#          git submodule update --recursive --remote
 
       - name: Commit
         run: |
