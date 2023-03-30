@@ -1,5 +1,4 @@
-name: Send submodule updates to parent repo
-
+name: Build
 on:
   push:
     branches: 
