@@ -14,8 +14,9 @@ jobs:
         with: 
           repository: theratec/therapp-android
           token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
-          submodules: true
-
+          # submodules: true
+          submodules: recursive
+          
       - name: Pull & update submodules recursively
         run: |
           git submodule sync
