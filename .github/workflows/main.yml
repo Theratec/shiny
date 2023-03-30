@@ -15,11 +15,19 @@ jobs:
           repository: theratec/therapp-android
           token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
           submodules: true
+          
+      - name: Setup .NET 7.0
+        uses: actions/setup-dotnet@v1
+        with:
+            dotnet-version: '7.0.x'
 
-#      - name: Pull & update submodules recursively
-#        run: |
-#          git submodule update --init --recursive
-#          git submodule update --recursive --remote
+      - name: Add .NET Workloads
+        run: dotnet workload install maui-ios maui-android maui-maccatalyst ios android maccatalyst
+
+      - name: Pull & update submodules recursively
+        run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
 
       - name: Commit
         run: |
